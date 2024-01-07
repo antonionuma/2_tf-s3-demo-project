@@ -25,15 +25,6 @@ resource "aws_s3_bucket" "test" {
   bucket = var.name
   #acl    = "private"
 
-}
-
-resource "aws_s3_bucket_versioning" "versioning" {
-  bucket = var.name
-  versioning_configuration {
-    status = "Enabled"
-  }
-}
-
 
   server_side_encryption_configuration {
     rule {
@@ -49,6 +40,13 @@ resource "aws_s3_bucket_versioning" "versioning" {
   }
 
   tags = local.common_tags
+}
+
+resource "aws_s3_bucket_versioning" "versioning" {
+  bucket = var.name
+  versioning_configuration {
+    status = "Enabled"
+  }
 }
 
 resource "aws_s3_bucket_public_access_block" "s3Public_test" {
