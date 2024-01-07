@@ -2,7 +2,7 @@ terraform {
   backend "s3" {
     bucket = "hands-on-cloud-terraform-remote-state-s3"
     key = "demo-tf-project.tfstate"
-    region = "us-west-2"
+    region = "us-east-1"
     encrypt = "true"
   }
 }
