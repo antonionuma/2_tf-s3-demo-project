@@ -25,9 +25,15 @@ resource "aws_s3_bucket" "test" {
   bucket = var.name
   #acl    = "private"
 
-  versioning {
-    enabled = true
+}
+
+resource "aws_s3_bucket_versioning" "versioning" {
+  bucket = var.name
+  versioning_configuration {
+    status = "Enabled"
   }
+}
+
 
   server_side_encryption_configuration {
     rule {

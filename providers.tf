@@ -9,6 +9,6 @@ terraform {
 
 
 provider "aws" {
-  profile = "cloud-env"
+  #profile = "cloud-env"
   region = "us-east-1"
 }
