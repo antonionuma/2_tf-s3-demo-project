@@ -1,6 +1,7 @@
 terraform {
   backend "s3" {
-    bucket = "hands-on-cloud-terraform-remote-state-s3"
+    #bucket = "hands-on-cloud-terraform-remote-state-s3"
+    bucket = "hands-on-cloud-terraform-remote-state"
     key = "demo-tf-project.tfstate"
     region = "us-east-1"
     encrypt = "true"
@@ -20,7 +21,7 @@ locals {
 resource "aws_s3_bucket" "test" {
   #ts:skip=AC_AWS_0497 We don't need logging for this S3 bucket
   bucket = var.name
-  acl    = "private"
+  #acl    = "private"
 
   versioning {
     enabled = true
