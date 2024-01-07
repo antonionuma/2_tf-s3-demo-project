@@ -5,6 +5,8 @@ terraform {
     key = "demo-tf-project.tfstate"
     region = "us-east-1"
     encrypt = "true"
+    shared_credentials_file = "~/.aws/credentials"
+    profile = "cloud-env"
   }
 }
 
